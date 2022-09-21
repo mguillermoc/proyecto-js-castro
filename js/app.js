@@ -1,16 +1,39 @@
 let completo = [];
-const BtnAgregar = document.querySelector(".btn")
+IdUnico = 0;
+IdUnico2 = 0;
+const BtnJuntar = document.querySelector("#codificar");
+// const Quitar = document.getElementsByClassName("btn2");
+
+// Quitar.onclick= function borrar(){
+//     console.log('clicked')
+//   };
 
 
-BtnAgregar.onclick = function(){
-    const Tipo = document.getElementById("tipo").value
-    const Campo = document.getElementById("seleccion").value
-    completo.push(Campo,Tipo);
-    console.log(completo)
+ 
+BtnJuntar.onclick = function(){
+    var Formulario = document.getElementsByClassName('formulario');
+    for(var i=0; i< Formulario.length; i++){
+    const inputs = Formulario[i].elements;
+    const Tipo = inputs[0].value;
+    const Campo = inputs[1].value;
+    const objeto = {"Tipo":Tipo,"Campo ID": Campo}
+    completo.push(objeto);
+    console.log(completo);
+}
 }
 
+const BtnAgregar = document.querySelector("#agregar");
+const CajaPrincipal = document.querySelector("main")
 
-
+BtnAgregar.onclick= function(){
+    let FormToDup = document.querySelector(".formulario");
+    let clonar = FormToDup.cloneNode(true);
+    let clonarElementos = clonar.elements;
+    const botonid = clonarElementos[2]
+    botonid.id = `boton_${IdUnico2 += 1}`;
+    clonar.id = IdUnico += 1
+    CajaPrincipal.appendChild(clonar)
+}
 
 
 
