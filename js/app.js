@@ -2,11 +2,9 @@ let completo = [];
 IdUnico = 0;
 IdUnico2 = 0;
 const BtnJuntar = document.querySelector("#codificar");
-// const Quitar = document.getElementsByClassName("btn2");
-
-// Quitar.onclick= function borrar(){
-//     console.log('clicked')
-//   };
+var BtnBorrar = document.getElementsByClassName("btn2");
+const BtnAgregar = document.querySelector("#agregar");
+const CajaPrincipal = document.querySelector("main")
 
 
  
@@ -22,8 +20,7 @@ BtnJuntar.onclick = function(){
 }
 }
 
-const BtnAgregar = document.querySelector("#agregar");
-const CajaPrincipal = document.querySelector("main")
+
 
 BtnAgregar.onclick= function(){
     let FormToDup = document.querySelector(".formulario");

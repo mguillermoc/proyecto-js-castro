@@ -47,21 +47,28 @@
             </div>
         </header>
         <!-- Portfolio Section-->
-        <main style="margin: 150px 250px;">
-            <select class="form-select mb-4" id="tipo" aria-label="Default select example">
-                <option selected>Elemento</option>
-                <option value="1">Título sin Texto</option>
-                <option value="2">Título con Texto</option>
-                <option value="3">Texto sin título</option>
-                <option value="4">Video Youtube</option>
-                <option value="5">Audio Soundcloud</option>
-                <option value="6">Titulo con subtitulo</option>
-                <option value="6">Botón de descarga</option>
-              </select>
-                 <input id="seleccion" type="text" name="name">
-                <button class="btn">Agregar</button>
+        <body style="padding:150px auto;">
+            <div class="botonera" style="margin:50px 700px;justify-content: space-between; align-items: center; display: flex; flex-direction: row;">
+            <button class="btn" id="codificar">Codificar</button>
+            <button class="btn" id="agregar">Agregar</button>
+        </div>
+        <main style="margin:150px auto;">
+            <form class="formulario mb-4" Style="width: 1000px; margin:0 auto;"  id="0">
+                <select class="form-select mb-4" id="tipo" aria-label="Default select example">
+                    <option value="0" selected>Elemento</option>
+                    <option value="1">Título s/ Texto</option>
+                    <option value="2">Título c/ Texto</option>
+                    <option value="3">Texto s/ Título</option>
+                    <option value="4">Youtube</option>
+                    <option value="5">Soundcloud</option>
+                    <option value="6">Titulo c/ sub</option>
+                    <option value="7">Botón de descarga</option>
+                </select>
+                <input id="seleccion" type="text" name="seleccion">
+                <button class="btn2" type="button" id="quitar">Quitar</button>
+            </form>
         </main>
-     
+
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
