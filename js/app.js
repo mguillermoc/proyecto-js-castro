@@ -47,6 +47,32 @@ BtnJuntar.onclick = function(){
 } 
 
 
+const container = document.querySelector(".container1");
+var cardTag="";
+function getPhotos(images) {
+   images.map(image => {
+     cardTag = `<div class="card">
+              <img src=${image.src.large} />
+         </div>`;
+     container.innerHTML += cardTag;
+   })
+}
+
+fetch("https://api.pexels.com/v1/search?query=landscape",{
+ headers: {
+   Authorization: "563492ad6f91700001000001dbd8867872fb42ff9505d754c1bfed1e"
+ }
+})
+.then(resp => {
+  return resp.json()
+})
+.then(data => {
+  getPhotos(data.photos);
+})
+
+
+
+
 // BtnJuntar.onclick = function(){
 //     var Formulario = document.getElementsByClassName('formulario');
 //     for(var i=0; i< Formulario.length; i++){
