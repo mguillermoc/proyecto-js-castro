@@ -64,6 +64,11 @@
   --bs-body-bg: #fff;
 }
 
+.btn3:first-of-type{
+  color:red;
+  margin-top: 100px;
+}
+
 *,
 *::before,
 *::after {

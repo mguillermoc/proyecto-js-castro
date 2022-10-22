@@ -2,9 +2,9 @@ let completo = [];
 IdUnico = 0;
 IdUnico2 = 0;
 const BtnJuntar = document.querySelector("#codificar");
-var BtnBorrar = document.getElementsByClassName("btn2");
 const BtnAgregar = document.querySelector("#agregar");
 const CajaPrincipal = document.querySelector("main")
+
 
 BtnAgregar.onclick= function(){
     let FormToDup = document.querySelector(".formulario");
@@ -13,8 +13,34 @@ BtnAgregar.onclick= function(){
     const botonid = clonarElementos[2]
     botonid.id = `boton_${IdUnico2 += 1}`;
     clonar.id = IdUnico += 1
-    CajaPrincipal.appendChild(clonar)
+    CajaPrincipal.appendChild(clonar)   
 }
+
+
+function removeEducation(deleteButton) {
+  let EsUnico = document.querySelectorAll(".btn2")
+  if (EsUnico.length==1){
+    alert("🛑No puedes borrar todos los campos😜")
+  }
+  else{
+  deleteButton.parentNode.parentNode.removeChild(deleteButton.parentNode);
+}
+}
+
+function Juntar (){
+  if(completo.length==0){
+    var Formulario = document.getElementsByClassName('formulario');
+         for(var i=0; i< Formulario.length; i++){
+        const inputs = Formulario[i].elements;
+        const Tipo = inputs[0].value;
+        const Campo = inputs[1].value;
+        const objeto = {"Tipo":Tipo,"Campo ID": Campo}
+        completo.push(objeto);
+      }} else {alert("Ya está complilado");}
+console.log(completo);     
+};
+
+
 
 BtnJuntar.onclick = function(){
     Swal.fire({
@@ -31,13 +57,7 @@ BtnJuntar.onclick = function(){
         }
       }).then((result) => {
         if (result.isConfirmed) {
-            var Formulario = document.getElementsByClassName('formulario');
-                 for(var i=0; i< Formulario.length; i++){
-                const inputs = Formulario[i].elements;
-                const Tipo = inputs[0].value;
-                const Campo = inputs[1].value;
-                const objeto = {"Tipo":Tipo,"Campo ID": Campo}
-            }
+        Juntar();
         Swal.fire('¡Compilado!', '', 'success')
     } else if (result.isDenied) {
   Swal.fire('Cancelado', '', 'info')
@@ -47,28 +67,31 @@ BtnJuntar.onclick = function(){
 } 
 
 
-const container = document.querySelector(".container1");
-var cardTag="";
-function getPhotos(images) {
-   images.map(image => {
-     cardTag = `<div class="card">
-              <img src=${image.src.large} />
-         </div>`;
-     container.innerHTML += cardTag;
-   })
-}
 
-fetch("https://api.pexels.com/v1/search?query=landscape",{
- headers: {
-   Authorization: "563492ad6f91700001000001dbd8867872fb42ff9505d754c1bfed1e"
- }
-})
-.then(resp => {
-  return resp.json()
-})
-.then(data => {
-  getPhotos(data.photos);
-})
+
+
+// const container = document.querySelector(".container1");
+// var cardTag="";
+// function getPhotos(images) {
+//    images.map(image => {
+//      cardTag = `<div class="card">
+//               <img src=${image.src.large} />
+//          </div>`;
+//      container.innerHTML += cardTag;
+//    })
+// }
+
+// fetch("https://api.pexels.com/v1/search?query=landscape&per_page=1",{
+//  headers: {
+//    Authorization: "563492ad6f91700001000001dbd8867872fb42ff9505d754c1bfed1e"
+//  }
+// })
+// .then(resp => {
+//   return resp.json()
+// })
+// .then(data => {
+//   getPhotos(data.photos);
+// })
 
 
 
