@@ -1,4 +1,5 @@
 let completo = [];
+let completo2=[];
 IdUnico = 0;
 IdUnico2 = 0;
 const BtnJuntar = document.querySelector("#codificar");
@@ -17,7 +18,7 @@ BtnAgregar.onclick= function(){
 }
 
 
-function removeEducation(deleteButton) {
+function QuitarCampo(deleteButton) {
   let EsUnico = document.querySelectorAll(".btn2")
   if (EsUnico.length==1){
     alert("🛑No puedes borrar todos los campos😜")
@@ -41,6 +42,42 @@ console.log(completo);
 };
 
 
+function Ordenar (){
+completo.forEach(element => {
+if (element.Tipo=="0"){
+console.log("Elemento")
+completo2.push("Elemento")
+}
+else if(element.Tipo=="1"){
+console.log("Título s/ Texto")
+completo2.push("Título s/ Texto")
+}
+else if(element.Tipo==2){
+console.log("Título c/ Texto")
+completo2.push("Título c/ Texto")
+}
+else if(element.Tipo==3){
+console.log("Texto s/ Título")
+completo2.push("Texto s/ Título")
+}
+else if(element.Tipo==4){
+console.log("YouTube")
+completo2.push("YouTube")
+}
+else if(element.Tipo==5){
+console.log("Soundcloud")
+completo2.push("Soundcloud")
+}
+else if(element.Tipo==6){
+console.log("Titulo c/ sub")
+completo2.push("Titulo c/ sub")
+}
+else if(element.Tipo==7){
+console.log("Botón de descarga")
+completo2.push("Botón de descarga")
+};
+});}
+
 
 BtnJuntar.onclick = function(){
     Swal.fire({
@@ -58,10 +95,11 @@ BtnJuntar.onclick = function(){
       }).then((result) => {
         if (result.isConfirmed) {
         Juntar();
+        Ordenar();
+        console.log(completo2)
         Swal.fire('¡Compilado!', '', 'success')
     } else if (result.isDenied) {
   Swal.fire('Cancelado', '', 'info')
-
 }   
 })
 } 
