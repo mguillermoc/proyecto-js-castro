@@ -14,7 +14,7 @@ BtnAgregar.onclick= function(){
     const botonid = clonarElementos[2]
     botonid.id = `boton_${IdUnico2 += 1}`;
     clonar.id = IdUnico += 1
-    CajaPrincipal.appendChild(clonar)   
+    CajaPrincipal.appendChild(clonar)
 }
 
 
@@ -35,46 +35,65 @@ function Juntar (){
         const inputs = Formulario[i].elements;
         const Tipo = inputs[0].value;
         const Campo = inputs[1].value;
-        const objeto = {"Tipo":Tipo,"Campo ID": Campo}
+        const objeto = {"Tipo":Tipo,"Campo_ID": Campo}
         completo.push(objeto);
       }} else {alert("Ya está complilado");}
-console.log(completo);     
+console.log(completo);
 };
 
 
 function Ordenar (){
-completo.forEach(element => {
+  var preview_1 = document.querySelectorAll(".preview")
+  completo.forEach(element => {
 if (element.Tipo=="0"){
-console.log("Elemento")
-completo2.push("Elemento")
+  const Titulo = document.createElement('h1');
+  Titulo.classList.add('titulo');
+  Titulo.innerText = element.Campo_ID;
+  console.log(Titulo)
+  preview_1.append(Titulo);
 }
 else if(element.Tipo=="1"){
-console.log("Título s/ Texto")
-completo2.push("Título s/ Texto")
+  const Titulo = document.createElement('h1');
+  Titulo.classList.add('titulo');
+  Titulo.innerText = element.Campo_ID;
+  console.log(Titulo)
+  document.body.insertBefore(Titulo, preview_1)
 }
 else if(element.Tipo==2){
-console.log("Título c/ Texto")
-completo2.push("Título c/ Texto")
+  const Titulo = document.createElement('h1');
+  Titulo.classList.add('titulo');
+  Titulo.innerText = element.Campo_ID;
+  console.log(Titulo)
+  
+  // preview_1.append(Titulo);
 }
 else if(element.Tipo==3){
-console.log("Texto s/ Título")
-completo2.push("Texto s/ Título")
+  const Titulo = document.createElement('h1');
+  Titulo.classList.add('titulo');
+  Titulo.innerText = element.Campo_ID;
+  console.log(Titulo)
+  preview_1.append(Titulo);
 }
 else if(element.Tipo==4){
-console.log("YouTube")
-completo2.push("YouTube")
+  const Titulo = document.createElement('h1');
+  Titulo.classList.add('titulo');
+  Titulo.innerText = element.Campo_ID;
+  console.log(Titulo)
+  preview_1.append(Titulo);
 }
 else if(element.Tipo==5){
-console.log("Soundcloud")
-completo2.push("Soundcloud")
+  const Titulo = document.createElement('h1');
+  Titulo.classList.add('titulo');
+  Titulo.innerText = element.Campo_ID;
+  console.log(Titulo)
+  preview_1.append(Titulo);
 }
 else if(element.Tipo==6){
-console.log("Titulo c/ sub")
-completo2.push("Titulo c/ sub")
-}
-else if(element.Tipo==7){
-console.log("Botón de descarga")
-completo2.push("Botón de descarga")
+  const Titulo = document.createElement('h1');
+  Titulo.classList.add('titulo');
+  Titulo.innerText = element.Campo_ID;
+  console.log(Titulo)
+  preview_1.append(Titulo);
 };
 });}
 
@@ -97,13 +116,12 @@ BtnJuntar.onclick = function(){
         Juntar();
         Ordenar();
         console.log(completo2)
-        Swal.fire('¡Compilado!', '', 'success')
+        // Swal.fire('¡Compilado!', '', 'success')
     } else if (result.isDenied) {
   Swal.fire('Cancelado', '', 'info')
-}   
+}
 })
-} 
-
+}
 
 
 
@@ -145,8 +163,6 @@ BtnJuntar.onclick = function(){
 //     console.log(completo);
 // }
 // }
-
-
 
 
 

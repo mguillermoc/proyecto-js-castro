@@ -46,6 +46,7 @@
                 </div>
                 <!-- Masthead Subheading-->
                 <p class="masthead-subheading font-weight-light mb-0">El código generado con este maquetador será codificado en base 64 y será compatible con el tema especificado</p>
+         <div class="preview"></div>
             </div>
         </header>
 
@@ -56,22 +57,22 @@
            </div>
 
         <!-- Portfolio Section-->
+                  <!--fin popup-->
         <body style="padding:150px auto;">
-            <div class="botonera">
-            <button class="btn" id="codificar">Codificar</button>
-            <button class="btn" id="agregar">Agregar</button>
+            <div class="botonera" style="margin:10px 25%;">
+            <button class="btn" id="codificar">Preview</button>
+            <button class="btn" id="agregar">Agregar Campo</button>
         </div>
         <main style="margin:150px auto;">
             <form class="formulario mb-4" Style="width: 1000px; margin:0 auto;"  id="0">
                 <select class="form-select mb-4" id="tipo" aria-label="Default select example">
                     <option value="0" selected>Elemento</option>
-                    <option value="1">Título s/ Texto</option>
-                    <option value="2">Título c/ Texto</option>
-                    <option value="3">Texto s/ Título</option>
+                    <option value="1">Título</option>
+                    <option value="2">Subtitulo</option>
+                    <option value="3">Texto</option>
                     <option value="4">Youtube</option>
                     <option value="5">Soundcloud</option>
-                    <option value="6">Titulo c/ sub</option>
-                    <option value="7">Botón de descarga</option>
+                    <option value="6">Botón de descarga</option>
                 </select>
                 <input id="seleccion" type="text" name="seleccion">
                 <button class="btn2" type="button" onClick='QuitarCampo(this);' id="quitar">Quitar</button>
