@@ -38,7 +38,11 @@ function Juntar (){
         const Campo = inputs[1].value;
         const objeto = {"Tipo":Tipo,"Campo_ID": Campo}
         completo.push(objeto);
-      }} else {
+      }
+      CrearCard();
+      setTimeout(6000)
+      Ordenar();
+    } else {
         Swal.fire({
           title: '¿Ya está compilado, quieres hacerlo nuevamente?',
           showDenyButton: true,
@@ -53,16 +57,43 @@ function Juntar (){
           }
         }).then((result) => {
           if (result.isConfirmed) {
-          let completo = [];
+            while(completo.length > 0) {
+              completo.pop();
+          };
+          setTimeout(6000)
+          let borrar_1 = document.querySelector('.card');
+          borrar_1.remove();
+          let borrar_2 = document.querySelector('.boton2');
+          borrar_2.remove();
           Juntar();
-          Ordenar();
-          Swal.fire('¡Compilado!', '', 'success')
+          // Swal.fire('¡Compilado!', '', 'success')
         } else if (result.isDenied) {
         Swal.fire('Cancelado', '', 'info')
         }
         })
         }
 };
+function Base64(){
+  let preview_10 = document.querySelector('.card');
+  const result = window.btoa(preview_10.innerHTML);
+  Swal.fire({
+    title: 'El código en Base 64 es:',
+    text: result,
+  })
+  // alert('El codigo en Base 64 es:'+ '\n' + result);
+}
+
+
+function boton_cod(){
+const Btn_codificar = document.createElement('a');
+Btn_codificar.classList.add('boton2');
+Btn_codificar.innerText = "codificar";
+Btn_codificar.addEventListener('click', function handleClick(event) {
+  Base64 ();
+});
+let preview_8 = document.querySelector('.preview');
+preview_8.appendChild(Btn_codificar)
+}
 
 
 function CrearCard (){
@@ -73,7 +104,6 @@ function CrearCard (){
 }
 
 function Ordenar (){  
-  CrearCard();
   completo.forEach(element => {
 if (element.Tipo=="1"){
   const Titulo = document.createElement('h1');
@@ -86,7 +116,6 @@ else if(element.Tipo=="2"){
   const Subtitulo = document.createElement('h3');
   Subtitulo.classList.add('subtitulo');
   Subtitulo.innerText = element.Campo_ID;
-  console.log(Subtitulo)
   let preview_3 = document.querySelector('.card');
   preview_3.appendChild(Subtitulo)
 }
@@ -94,31 +123,46 @@ else if(element.Tipo==3){
   const Texto = document.createElement('p');
   Texto.classList.add('texto');
   Texto.innerText = element.Campo_ID;
-  console.log(Texto)
+  let preview_4 = document.querySelector('.card');
+  preview_4.appendChild(Texto)
 }
 else if(element.Tipo==4){
   const Youtube = document.createElement('div');
   Youtube.classList.add('youtube');
-  Youtube.innerText = element.Campo_ID;
-  console.log(Youtube)
+  Youtube.innerHTML = element.Campo_ID;
+  let preview_5 = document.querySelector('.card');
+  preview_5.appendChild(Youtube)
 }
 else if(element.Tipo==5){
   const Souncloud = document.createElement('div');
   Souncloud.classList.add('soundcloud');
-  Souncloud.innerText = element.Campo_ID;
-  console.log(Souncloud)
+  Souncloud.innerHTML = element.Campo_ID;
+  let preview_6 = document.querySelector('.card');
+  preview_6.appendChild(Souncloud)
 }
 else if(element.Tipo==6){
-  const Boton = document.createElement('button');
+  const Boton = document.createElement('a');
   Boton.classList.add('boton');
-  Boton.innerText = element.Campo_ID;
-  console.log(Boton)
-  preview_1.append(Boton);
+  Boton.innerText = "Descargar";
+  var t = Boton.setAttribute("href",element.Campo_ID);
+  Boton.setAttribute("target","_blank");
+  let preview_7 = document.querySelector('.card');
+  preview_7.appendChild(Boton)
 }
 else if(element.Tipo==0){
-  pass
+  const Texto2 = document.createElement('p');
+  Texto2.classList.add('texto');
+  Texto2.innerText = element.Campo_ID;
+  let preview_9 = document.querySelector('.card');
+  preview_9.appendChild(Texto2)
 };
-});}
+});
+boton_cod ();
+}
+
+
+
+
 
 BtnJuntar.onclick = function(){
     Swal.fire({
@@ -136,9 +180,7 @@ BtnJuntar.onclick = function(){
       }).then((result) => {
         if (result.isConfirmed) {
         Juntar();
-        Ordenar();
-        console.log(completo2)
-        Swal.fire('¡Compilado!', '', 'success')
+        // Swal.fire('¡Compilado!', '', 'success')
     } else if (result.isDenied) {
   Swal.fire('Cancelado', '', 'info')
 }

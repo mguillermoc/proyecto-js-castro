@@ -38,6 +38,9 @@
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
+                <div style="margin:0 auto;">
+                    <h3>Presentacion del proyecto</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/QXs4MIOsD48" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                </div>
                          <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -45,25 +48,18 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">El código generado con este maquetador será codificado en base 64 y será compatible con el tema especificado</p>
+                <p class="masthead-subheading font-weight-light mb-0">El código generado con este maquetador será codificado en base 64</p>
                 <div class="preview"></div>
             </div>
         </header>
-
-        <div class="container1">
-            <!-- <div class="card">
-                <img src="" />
-             </div> --> 
-           </div>
-
-        <!-- Portfolio Section-->
-                  <!--fin popup-->
-        <body style="padding:150px auto;">
-            <div class="botonera" style="margin:10px 25%;">
+    <body style="padding:150px auto;">
+        <div class="Caja_Principal">
+            <div class="Caja_Izquierda">
+            <div class="botonera">
             <button class="btn" id="codificar">Preview</button>
-            <button class="btn" id="agregar">Agregar Campo</button>
+            <button class="btn" id="agregar" style="margin-left:25px;">Agregar Campo</button>
         </div>
-        <main style="margin:150px auto;">
+        <main style="margin:50px auto;">
             <form class="formulario mb-4" Style="width: 1000px; margin:0 auto;"  id="0">
                 <select class="form-select mb-4" id="tipo" aria-label="Default select example">
                     <option value="0" selected>Elemento</option>
@@ -74,11 +70,28 @@
                     <option value="5">Soundcloud</option>
                     <option value="6">Botón de descarga</option>
                 </select>
-                <input id="seleccion" type="text" name="seleccion">
-                <button class="btn2" type="button" onClick='QuitarCampo(this);' id="quitar">Quitar</button>
+                <textarea class="form-control" id="seleccion" name="seleccion" id="exampleFormControlTextarea1" rows="3" ></textarea>
+                <button class="btn2" type="button" onClick='QuitarCampo(this);' id="quitar" style="margin-top:15px;">Quitar</button>
             </form>
+            </div>
+           <div class="Caja_Derecha">
+            <h3>Elementos de Ejemplo</h3>
+<h5>Título</h5>
+<p>Esto es un título</p>
+<h5>Subtítulo</h5>
+<p>Esto es un subtítulo</p>
+<h5>Texto</h5>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<h5>Youtube</h5>
+<code>&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/c9r8JmjK22Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;</code>
+<h5>Soundcloud</h5>
+<code>&lt;iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1364632132&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"&gt;&lt;/iframe&gt;</code>
+<h5>Link de descarga</h5>
+<p><code>http://speedtest.ftp.otenet.gr/files/test1Mb.db</code></p>
+           </div> 
+        </div>
         </main>
-        
+        </body>
         <!-- Footer-->
         <footer class="footer text-center">
             <div class="container">
